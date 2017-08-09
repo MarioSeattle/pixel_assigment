@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Maker</title>
+    <style>
+        #canvas, #palette{
+            width: 300px;
+            background: lightgray;
+            position: absolute;
+            padding: 5px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: auto;
+        }
+        .pixel, .color{
+            background-color: red;
+            width: 10px;
+            height: 10px;
+            margin-left: 2px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div id="canvas"></div>
+    <div id="palette"></div>
+</main>
+<script src="./canvas.js"></script>
+</body>
+</html>
