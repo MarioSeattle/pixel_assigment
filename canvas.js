@@ -1,4 +1,4 @@
-const PIXEL_WIDTH = 100;
+const PIXEL_WIDTH = 442;
 const VALID_COLORS = ['#ffffff', 'red', 'blue', 'green'];
 
 var canvas = {
