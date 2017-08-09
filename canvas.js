@@ -1,8 +1,9 @@
-const PIXEL_WIDTH = 1200;
+const PIXEL_WIDTH = 100;
 const VALID_COLORS = ['#ffffff', 'red', 'blue', 'green'];
 
 var canvas = {
     selectedColor: "#ffffff",
+    isPainting: false,
     drawCanvas: function(){
         let canvasElement = document.getElementById('canvas');
         for (let i = 0; i < PIXEL_WIDTH; i++){
@@ -10,7 +11,19 @@ var canvas = {
             pixel.className = 'pixel';
             pixel.style.backgroundColor = canvas.selectedColor;
             canvasElement.appendChild(pixel);
+
+            pixel.addEventListener('mouseenter', function(event) {
+                if (canvas.isPainting){
+                    event.target.style.background = canvas.selectedColor;
+                }
+            });
         }
+        canvasElement.addEventListener('mousedown', function(event) {
+            canvas.isPainting = true;
+        });
+        canvasElement.addEventListener('mouseup', function(event) {
+            canvas.isPainting = false;
+        });
         canvasElement.addEventListener('click', function(event) {
             if (event.target.className !== 'pixel') {
                 return;
